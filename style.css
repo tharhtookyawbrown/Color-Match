@@ -3,7 +3,7 @@ body {
     font-family: 'Press Start 2P', cursive;
     
     /* *** ဤနေရာတွင် background.png ကို body ၏ နောက်ခံအဖြစ် တိုက်ရိုက်သတ်မှတ်သည် *** */
-    background-image: url('images/background.png');
+    background-image: url('background.png');
     background-size: cover; /* မျက်နှာပြင်အပြည့် ဖုံးအုပ်ရန် */
     
     background-repeat: no-repeat;
