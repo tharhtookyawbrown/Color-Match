@@ -1,0 +1,251 @@
+/* Pixel Font ကို Google Fonts မှ သုံးရန် လိုအပ်သည် */
+body {
+    font-family: 'Press Start 2P', cursive;
+    
+    /* *** ဤနေရာတွင် background.png ကို body ၏ နောက်ခံအဖြစ် တိုက်ရိုက်သတ်မှတ်သည် *** */
+    background-image: url('images/background.png');
+    background-size: cover; /* မျက်နှာပြင်အပြည့် ဖုံးအုပ်ရန် */
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-color: #333; /* Fallback color */
+}
+
+/* ==================================== */
+/* Live Video Background Style ကို ဖယ်ရှားလိုက်ပါပြီ */
+/* ==================================== */
+
+/* ... (existing styles) ... */
+
+#game-container {
+    /* *** desk.png နောက်ခံပုံများကို ဖယ်ရှားခြင်း *** */
+    background-image: none; /* နောက်ခံပုံကို ဖယ်ရှားသည် */
+    
+    /* *** Pixel Art Color အသစ်ကို ထည့်သွင်းခြင်း *** */
+    background-color: #08637c; /* Dark Teal Blue (Pixel Vibe) */
+    
+    border: 5px solid #fff;
+    box-shadow: 8px 8px 0 #000; /* Pixel shadow effect */
+    padding: 20px;
+    width: 100%;
+    max-width: 1000px;
+    z-index: 1; 
+    margin: 20px 0;
+ 
+}
+
+/* Pixel Art Box Styling (Message box များအတွက်) */
+.pixel-box {
+    border: 3px solid #fff;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: rgba(113, 161, 228, 0.9); /* #1D3557 ၏ အကြည်ရောင် (Opacity) */
+    box-shadow: 4px 4px 0 #000;
+}
+
+
+@media (max-width: 600px) {
+    #game-container {
+        padding: 10px;
+        transform: none; /* ဖုန်းတွင် လှည့်ခြင်းကို ပယ်ဖျက်သည် */
+    }
+    .card-img {
+        width: 60px;
+        height: 90px;
+    }
+    /* #video-background display: none; ကို ဖယ်ရှားသည် */
+}
+
+h1 {
+    color: #fcfcfc; /* Greenish header */
+    margin-bottom: 20px;
+    font-size: 2em;
+    text-align: center;
+}
+
+/* Color Boxes Layout */
+.color-box {
+    width: 100%;
+    height: 100px;
+    margin: 15px 0;
+    border: 3px solid #eceff4;
+    box-shadow: 4px 4px 0 #242933;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 0;
+    font-weight: bold;
+    color: #000; /* Text inside color box */
+    text-shadow: 1px 1px 0 #fff;
+    font-size: 0.8em;
+}
+
+#target-rgb, #guess-rgb {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px 10px;
+    border: 2px solid #000;
+}
+
+/* Sliders */
+#controls {
+    margin: 25px 0;
+    text-align: left;
+    font-size: 0.8em;
+}
+
+.slider-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.slider-group label {
+    width: 50px;
+    color: #88c0d0; /* Blueish color */
+}
+
+/* Custom Pixel Art Slider Track and Thumb */
+.slider {
+    flex-grow: 1;
+    height: 10px;
+    margin: 0 10px;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    background: #4c566a; /* Dark track color */
+    border: 2px solid #2e3440;
+    box-shadow: inset 1px 1px 0 #242933;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px; 
+    height: 15px;
+    background: #d8dee9; /* Light thumb color */
+    border: 3px solid #2e3440;
+    box-shadow: 2px 2px 0 #000;
+}
+
+/* Buttons and Messages */
+.pixel-button {
+    font-family: 'Press Start 2P', cursive;
+    padding: 10px 15px;
+    margin: 5px;
+    border: 3px solid #4c566a;
+    border-radius: 0;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #242933;
+    background-color: #81a1c1; /* Default blue button */
+    color: #2e3440;
+    transition: all 0.1s;
+}
+
+.pixel-button:hover {
+    box-shadow: 2px 2px 0 #242933;
+    transform: translate(2px, 2px);
+}
+
+#check-button {
+    background-color: #a3be8c; /* Green check button */
+}
+
+#new-color-button {
+    background-color: #b48ead; /* Purple new color button */
+}
+
+#result-message {
+    margin-top: 15px;
+    font-size: 0.9em;
+    font-weight: bold;
+    min-height: 20px;
+    color: #a3be8c;
+}
+/* ... (existing styles) ... */
+
+/* Countdown Timer Style */
+#countdown-timer {
+    font-size: 0.8em;
+    color: #ebcb8b; /* Yellowish color */
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px dashed #4c566a;
+}
+
+/* Hidden class for JavaScript control */
+.hidden {
+    display: none !important;
+}
+/* ... (existing styles) ... */
+
+/* Check Count Display */
+#check-count {
+    font-size: 0.9em;
+    color: #eceff4;
+    margin-bottom: 5px;
+}
+
+/* Countdown Timer Style */
+#countdown-timer {
+    font-size: 0.8em;
+    color: #ebcb8b; /* Yellowish color */
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px dashed #4c566a;
+}
+/* ... (existing styles) ... */
+
+/* Sliders */
+#controls {
+    margin: 25px 0;
+    text-align: left;
+    font-size: 0.8em;
+}
+
+.slider-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.slider-group label {
+    width: 50px;
+    color: #88c0d0; /* Blueish color */
+}
+
+/* Adjust Buttons (+/-) */
+.adjust-btn {
+    width: 30px; /* Small square buttons */
+    height: 30px;
+    padding: 0;
+    margin: 0 5px;
+    font-size: 1.2em;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.slider {
+    flex-grow: 1;
+    height: 10px;
+    margin: 0 10px; /* Reduced margin due to buttons */
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    background: #4c566a; /* Dark track color */
+    border: 2px solid #2e3440;
+    box-shadow: inset 1px 1px 0 #242933;
+}
+
+/* ... (rest of the styles) ... */

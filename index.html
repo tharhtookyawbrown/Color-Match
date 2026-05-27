@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ピクセルカラーマッチゲーム</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>🎨ピクセル カラーマッチ🧠</h1>
+        
+        <div id="target-display" class="color-box pixel-border">
+            <p id="target-rgb">ターゲット</p>
+        </div>
+
+        <div id="guess-display" class="color-box pixel-border">
+            <p id="guess-rgb">あなたの予想</p>
+        </div>
+        
+        <div id="controls">
+            <div class="slider-group">
+                <label for="red-slider">赤🟥 (R):</label>
+                <button class="adjust-btn pixel-button" data-channel="red" data-op="minus">-</button>
+                <input type="range" min="0" max="255" value="0" class="slider red-slider" id="red-slider">
+                <button class="adjust-btn pixel-button" data-channel="red" data-op="plus">+</button>
+                <span id="red-value">0</span>
+            </div>
+
+            <div class="slider-group">
+                <label for="green-slider">緑🟩(G):</label>
+                <button class="adjust-btn pixel-button" data-channel="green" data-op="minus">-</button>
+                <input type="range" min="0" max="255" value="0" class="slider green-slider" id="green-slider">
+                <button class="adjust-btn pixel-button" data-channel="green" data-op="plus">+</button>
+                <span id="green-value">0</span>
+            </div>
+
+            <div class="slider-group">
+                <label for="blue-slider">青🟦 (B):</label>
+                <button class="adjust-btn pixel-button" data-channel="blue" data-op="minus">-</button>
+                <input type="range" min="0" max="255" value="0" class="slider blue-slider" id="blue-slider">
+                <button class="adjust-btn pixel-button" data-channel="blue" data-op="plus">+</button>
+                <span id="blue-value">0</span>
+            </div>
+        </div>
+
+        <div id="actions">
+            <p id="check-count">残りチェック回数: 5</p> 
+
+            <p id="countdown-timer">ヒントまで残り: 60秒</p>
+
+            <button id="check-button" class="pixel-button">チェック</button>
+            
+            <button id="hint-button" class="pixel-button hidden">ヒントを得る🌈</button> 
+            
+            <button id="new-color-button" class="pixel-button">新しい色</button>
+            <p id="result-message"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
